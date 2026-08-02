@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
-    <!-- Native iPadOS 27 App Meta Tags -->
+    <!-- Native iPadOS App Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="GreatNotes">
     <meta name="theme-color" content="#F2F2F7" id="meta-theme-color">
     
-    <!-- Hardcoded Native iOS PWA Icons -->
+    <!-- Native iOS Icons -->
     <link rel="apple-touch-icon" href="data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='512' height='512' fill='%230A84FF' rx='112'/%3E%3Cg transform='translate(256,256) rotate(-6) translate(-256,-256)'%3E%3Crect x='110' y='90' width='292' height='370' rx='20' fill='%23FFF' opacity='0.9'/%3E%3C/g%3E%3Cg transform='translate(256,256) rotate(4) translate(-256,-256)'%3E%3Crect x='110' y='90' width='292' height='370' rx='20' fill='%23FFF'/%3E%3Cpath d='M160 160h200m-200 60h200m-200 60h200m-200 60h200' stroke='%230A84FF' stroke-width='24' stroke-linecap='round' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='512' height='512' fill='%230A84FF' rx='112'/%3E%3Cg transform='translate(256,256) rotate(-6) translate(-256,-256)'%3E%3Crect x='110' y='90' width='292' height='370' rx='20' fill='%23FFF' opacity='0.9'/%3E%3C/g%3E%3Cg transform='translate(256,256) rotate(4) translate(-256,-256)'%3E%3Crect x='110' y='90' width='292' height='370' rx='20' fill='%23FFF'/%3E%3Cpath d='M160 160h200m-200 60h200m-200 60h200m-200 60h200' stroke='%230A84FF' stroke-width='24' stroke-linecap='round' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E">
     
-    <title>GreatNotes - iPadOS 27 Edition</title>
+    <title>GreatNotes - iPadOS Edition</title>
     
-    <!-- Tailwind CSS with Custom Config -->
+    <!-- Tailwind CSS with iPadOS Design Tokens -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -40,7 +40,7 @@
         }
     </script>
     
-    <!-- Pro External Libraries -->
+    <!-- External Icon & Vector Processing Libraries -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -51,10 +51,8 @@
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         
-        /* HARDWARE ACCELERATION CLASS */
         .gpu-accelerated { transform: translate3d(0, 0, 0); backface-visibility: hidden; perspective: 1000px; will-change: transform, opacity; }
 
-        /* THEME TRANSITIONS */
         .theme-transition { transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; }
         .app-bg-layer { position: fixed; inset: 0; z-index: -1; transition: opacity 0.4s ease; }
         .bg-light-layer { background-color: #F2F2F7; background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px); background-size: 24px 24px; opacity: 1; }
@@ -62,13 +60,12 @@
         .bg-dark-layer { background-color: #000000; background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 24px 24px; opacity: 0; }
         .dark .bg-dark-layer { opacity: 1; }
 
-        /* iPadOS 27 LIQUID GLASS DESIGN SYSTEM */
+        /* LIQUID GLASS DESIGN SYSTEM */
         .liquid-glass { background: rgba(255, 255, 255, 0.68); backdrop-filter: blur(50px) saturate(280%); -webkit-backdrop-filter: blur(50px) saturate(280%); box-shadow: var(--tw-shadow-liquid); transform: translate3d(0,0,0); }
         .dark .liquid-glass { background: rgba(25, 25, 25, 0.6); box-shadow: var(--tw-shadow-liquid-dark); }
         .liquid-glass-heavy { background: rgba(245, 245, 247, 0.88); backdrop-filter: blur(60px) saturate(300%); -webkit-backdrop-filter: blur(60px) saturate(300%); transform: translate3d(0,0,0); }
         .dark .liquid-glass-heavy { background: rgba(28, 28, 30, 0.88); }
 
-        /* NATIVE SPRING PHYSICS */
         .spring-btn { transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, opacity 0.2s ease, color 0.2s ease; transform-origin: center; }
         .spring-btn:active:not(:disabled) { transform: scale(0.92) translate3d(0,0,0); }
         .spatial-transition { transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1), filter 0.5s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1); will-change: transform, filter, opacity; transform-style: preserve-3d; }
@@ -236,25 +233,49 @@
         <div id="library-view" class="flex h-full w-full absolute inset-0 z-40 spatial-transition transform-gpu">
             
             <!-- Library Sidebar -->
-            <div class="w-[260px] md:w-[300px] liquid-glass-heavy border-r border-black/5 dark:border-white/10 flex flex-col h-full shrink-0 z-[110] pt-12 md:pt-16 shadow-2xl theme-transition">
-                <div class="px-6 md:px-8 pb-8">
-                    <div class="flex items-center mb-8 md:mb-10">
-                        <div class="w-14 h-14 md:w-16 md:h-16 mr-3.5 md:mr-4 shadow-[0_12px_24px_rgba(0,122,255,0.3)] rounded-[14px] md:rounded-[18px] overflow-hidden relative group flex-shrink-0 theme-transition">
+            <div class="w-[280px] md:w-[320px] liquid-glass-heavy border-r border-black/5 dark:border-white/10 flex flex-col h-full shrink-0 z-[110] pt-10 md:pt-12 shadow-2xl theme-transition">
+                <div class="px-6 md:px-8 pb-6">
+                    <div class="flex items-center mb-6 md:mb-8">
+                        <div class="w-12 h-12 md:w-14 md:h-14 mr-3 md:mr-3.5 shadow-[0_12px_24px_rgba(0,122,255,0.3)] rounded-[14px] md:rounded-[18px] overflow-hidden relative group flex-shrink-0 theme-transition">
                             <div class="absolute inset-0">
                                 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect width="512" height="512" fill="#0A84FF" rx="112"/><g transform="translate(256,256) rotate(-6) translate(-256,-256)"><rect x="110" y="90" width="292" height="370" rx="20" fill="#FFF" opacity="0.9"/></g><g transform="translate(256,256) rotate(4) translate(-256,-256)"><rect x="110" y="90" width="292" height="370" rx="20" fill="#FFF"/><path d="M160 160h200m-200 60h200m-200 60h200m-200 60h200" stroke="#0A84FF" stroke-width="24" stroke-linecap="round" opacity="0.3"/></g></svg>
                             </div>
                         </div>
-                        <h2 class="text-[22px] md:text-[26px] font-black tracking-tight text-ios-text dark:text-white theme-transition">GreatNotes</h2>
+                        <div>
+                            <h2 class="text-[20px] md:text-[24px] font-black tracking-tight text-ios-text dark:text-white theme-transition">GreatNotes</h2>
+                            <span class="text-[11px] font-extrabold uppercase tracking-widest text-ios-blue">Cloud Edition</span>
+                        </div>
                     </div>
-                    <nav class="space-y-2 md:space-y-2.5 font-bold text-[15px] md:text-[16px]">
-                        <button onclick="window.setLibraryFilter('all')" id="nav-all" class="w-full flex items-center px-4 md:px-5 py-3 md:py-4 bg-ios-blue/10 dark:bg-ios-blue/20 text-ios-blue rounded-[14px] md:rounded-2xl spring-btn theme-transition"><i data-lucide="library" class="w-5 h-5 mr-3 md:mr-4 stroke-[2.5]"></i> All Notes</button>
-                        <button onclick="window.setLibraryFilter('favorites')" id="nav-favorites" class="w-full flex items-center px-4 md:px-5 py-3 md:py-4 text-ios-subtext hover:bg-black/5 dark:hover:bg-white/5 rounded-[14px] md:rounded-2xl spring-btn theme-transition"><i data-lucide="star" class="w-5 h-5 mr-3 md:mr-4 stroke-[2.5]"></i> Favorites</button>
-                        <button onclick="window.setLibraryFilter('trash')" id="nav-trash" class="w-full flex items-center px-4 md:px-5 py-3 md:py-4 text-ios-subtext hover:bg-black/5 dark:hover:bg-white/5 rounded-[14px] md:rounded-2xl spring-btn theme-transition"><i data-lucide="trash-2" class="w-5 h-5 mr-3 md:mr-4 stroke-[2.5]"></i> Trash</button>
+
+                    <!-- Account & Google Cloud Sync Profile Card -->
+                    <div id="user-profile-card" class="mb-6 p-3.5 rounded-2xl bg-white/60 dark:bg-white/5 border border-black/5 dark:border-white/10 flex flex-col space-y-3 theme-transition">
+                        <div class="flex items-center space-x-3">
+                            <img id="user-avatar" src="https://placehold.co/80x80/0A84FF/FFFFFF?text=GN" class="w-10 h-10 rounded-full ring-2 ring-ios-blue/30 object-cover" alt="User Avatar">
+                            <div class="flex-1 min-w-0">
+                                <h4 id="user-name" class="text-[14px] font-extrabold truncate text-ios-text dark:text-white">Guest Session</h4>
+                                <p id="user-email" class="text-[11px] font-semibold text-ios-subtext truncate">Local & Cloud Caching</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between pt-1 border-t border-black/5 dark:border-white/5">
+                            <div class="flex items-center text-[12px] font-bold text-ios-subtext" id="auth-status-badge">
+                                <span class="w-2 h-2 rounded-full bg-green-500 mr-1.5 animate-pulse"></span> Cloud Ready
+                            </div>
+                            <button id="btn-google-auth" onclick="window.handleAuthAction()" class="px-3 py-1.5 bg-ios-blue text-white rounded-xl font-bold text-[12px] spring-btn hover:bg-ios-blue/90 flex items-center space-x-1 shadow-md">
+                                <i data-lucide="cloud" class="w-3.5 h-3.5 mr-1"></i>
+                                <span id="auth-btn-text">Sign In</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <nav class="space-y-2 font-bold text-[15px] md:text-[16px]">
+                        <button onclick="window.setLibraryFilter('all')" id="nav-all" class="w-full flex items-center px-4 py-3 bg-ios-blue/10 dark:bg-ios-blue/20 text-ios-blue rounded-[14px] spring-btn theme-transition"><i data-lucide="library" class="w-5 h-5 mr-3 stroke-[2.5]"></i> All Notes</button>
+                        <button onclick="window.setLibraryFilter('favorites')" id="nav-favorites" class="w-full flex items-center px-4 py-3 text-ios-subtext hover:bg-black/5 dark:hover:bg-white/5 rounded-[14px] spring-btn theme-transition"><i data-lucide="star" class="w-5 h-5 mr-3 stroke-[2.5]"></i> Favorites</button>
+                        <button onclick="window.setLibraryFilter('trash')" id="nav-trash" class="w-full flex items-center px-4 py-3 text-ios-subtext hover:bg-black/5 dark:hover:bg-white/5 rounded-[14px] spring-btn theme-transition"><i data-lucide="trash-2" class="w-5 h-5 mr-3 stroke-[2.5]"></i> Trash</button>
                     </nav>
                 </div>
-                <div class="mt-auto p-4 md:p-6 pb-8 md:pb-12">
-                    <button onclick="window.toggleTheme()" class="flex items-center text-[14px] md:text-[15px] font-bold text-ios-subtext hover:text-ios-text dark:hover:text-white spring-btn w-full px-4 md:px-5 py-3 md:py-4 rounded-[14px] md:rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 theme-transition">
-                        <i id="theme-icon" data-lucide="moon" class="w-5 h-5 mr-3 md:mr-4 stroke-[2.5]"></i> Dark Mode
+                <div class="mt-auto p-4 md:p-6 pb-8">
+                    <button onclick="window.toggleTheme()" class="flex items-center text-[14px] font-bold text-ios-subtext hover:text-ios-text dark:hover:text-white spring-btn w-full px-4 py-3 rounded-[14px] hover:bg-black/5 dark:hover:bg-white/5 theme-transition">
+                        <i id="theme-icon" data-lucide="moon" class="w-5 h-5 mr-3 stroke-[2.5]"></i> Dark Mode
                     </button>
                 </div>
             </div>
@@ -416,13 +437,51 @@
         </div>
     </div>
 
-    <script>
+    <!-- FIREBASE MODULE & MAIN LOGIC ENGINE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { 
+            getAuth, 
+            signInWithCustomToken, 
+            signInAnonymously, 
+            GoogleAuthProvider, 
+            signInWithPopup, 
+            signOut, 
+            onAuthStateChanged 
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { 
+            getFirestore, 
+            doc, 
+            setDoc, 
+            getDoc, 
+            deleteDoc, 
+            collection, 
+            onSnapshot 
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'greatnotes-ipad';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+            apiKey: "AIzaSyCW_8_oHiNb9g0rkedK9mLAbp-7vRZOKBg",
+            authDomain: "note-ipad.firebaseapp.com",
+            projectId: "note-ipad",
+            storageBucket: "note-ipad.firebasestorage.app",
+            messagingSenderId: "487237721477",
+            appId: "1:487237721477:web:759a996ebb03a3f0bcb8ec",
+            measurementId: "G-CYDXVKW227"
+        };
+
+        const firebaseApp = initializeApp(firebaseConfig);
+        const auth = getAuth(firebaseApp);
+        const db = getFirestore(firebaseApp);
+
+        let currentUser = null;
+        let unsubscribeCloudSync = null;
+
         const DB_NAME = 'GreatNotesiPadDB';
         const DB_VERSION = 1;
         const STORE_NAME = 'notebooks';
         let localDB = null;
 
-        // Global Image Cache Engine
         const imageCache = new Map();
 
         function getCachedImage(src, onLoadedCallback) {
@@ -455,6 +514,101 @@
                         db.createObjectStore(STORE_NAME, { keyPath: 'id' });
                     }
                 };
+            });
+        }
+
+        async function setupFirebaseAuth() {
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else if (!auth.currentUser) {
+                    await signInAnonymously(auth);
+                }
+            } catch (err) {
+                console.warn("Initial Auth Fallback:", err);
+                if (!auth.currentUser) await signInAnonymously(auth);
+            }
+
+            onAuthStateChanged(auth, (user) => {
+                currentUser = user;
+                updateUserProfileUI(user);
+                if (user) {
+                    attachCloudSyncListener(user.uid);
+                }
+            });
+        }
+
+        function updateUserProfileUI(user) {
+            const avatarEl = document.getElementById('user-avatar');
+            const nameEl = document.getElementById('user-name');
+            const emailEl = document.getElementById('user-email');
+            const btnText = document.getElementById('auth-btn-text');
+            const badge = document.getElementById('auth-status-badge');
+
+            if (user && !user.isAnonymous) {
+                avatarEl.src = user.photoURL || `https://placehold.co/80x80/0A84FF/FFFFFF?text=${encodeURIComponent(user.displayName?.charAt(0) || 'U')}`;
+                nameEl.innerText = user.displayName || 'Google Account';
+                emailEl.innerText = user.email || 'Cloud Synced';
+                btnText.innerText = 'Sign Out';
+                badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-green-500 mr-1.5 animate-pulse"></span> Google Synced';
+            } else {
+                avatarEl.src = "https://placehold.co/80x80/0A84FF/FFFFFF?text=GN";
+                nameEl.innerText = "Guest Session";
+                emailEl.innerText = "Local & Cloud Backup";
+                btnText.innerText = "Sign In";
+                badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-blue-500 mr-1.5 animate-pulse"></span> Local Sync';
+            }
+        }
+
+        async function handleAuthAction() {
+            if (currentUser && !currentUser.isAnonymous) {
+                try {
+                    await signOut(auth);
+                    showToast("Signed Out", "log-out");
+                    await signInAnonymously(auth);
+                } catch (e) {
+                    showToast("Sign Out Failed", "alert-circle");
+                }
+            } else {
+                const provider = new GoogleAuthProvider();
+                try {
+                    showLoading("Google Sign-In", "Connecting to Google Account...");
+                    await signInWithPopup(auth, provider);
+                    hideLoading();
+                    showToast("Signed In Successfully!", "check-circle");
+                } catch (error) {
+                    hideLoading();
+                    console.error("Google Auth Error:", error);
+                    if (error.code === 'auth/popup-blocked') {
+                        showModal("Popup Blocked", "Please enable popups for this app to sign in with Google.", "OK", false, ()=>{});
+                    } else if (error.code === 'auth/unauthorized-domain') {
+                        showModal("Domain Notice", "This web domain is currently in preview mode. Cloud sync remains active on your private session!", "OK", false, ()=>{});
+                    } else {
+                        showModal("Sign-In Notice", "Google auth was closed. Cloud sync remains fully active!", "OK", false, ()=>{});
+                    }
+                }
+            }
+        }
+
+        function attachCloudSyncListener(userId) {
+            if (unsubscribeCloudSync) unsubscribeCloudSync();
+
+            /* MANDATORY Firestore Rule Path */
+            const userColRef = collection(db, 'artifacts', appId, 'users', userId, 'notebooks');
+
+            unsubscribeCloudSync = onSnapshot(userColRef, (snapshot) => {
+                const cloudNotebooks = [];
+                snapshot.forEach(docSnap => {
+                    cloudNotebooks.push(docSnap.data());
+                });
+
+                if (cloudNotebooks.length > 0) {
+                    notebooks = cloudNotebooks.sort((a, b) => b.updatedAt - a.updatedAt);
+                    if (view === 'library') renderLibrary();
+                    else if (view === 'document' && activeTabId) updateDocumentUI();
+                }
+            }, (error) => {
+                console.error("Firestore Sync Error:", error);
             });
         }
 
@@ -505,33 +659,36 @@
             setSyncing(true);
             if (!localDB) await initLocalDB();
             
-            return new Promise((resolve, reject) => {
-                const tx = localDB.transaction(STORE_NAME, 'readwrite');
-                const store = tx.objectStore(STORE_NAME);
-                const request = store.put(nb);
-                
-                request.onsuccess = () => { 
-                    setSyncing(false); 
-                    resolve(); 
-                };
-                request.onerror = () => { 
-                    showToast("Save failed", "alert-circle"); 
-                    setSyncing(false); 
-                    reject(request.error); 
-                };
-            });
+            const tx = localDB.transaction(STORE_NAME, 'readwrite');
+            tx.objectStore(STORE_NAME).put(nb);
+
+            if (currentUser) {
+                try {
+                    const docRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'notebooks', nb.id);
+                    await setDoc(docRef, nb);
+                    setSyncing(false);
+                } catch (err) {
+                    console.error("Cloud Save Failed:", err);
+                    setSyncing(false);
+                }
+            } else {
+                setSyncing(false);
+            }
         }
 
         async function deleteNotebook(id) {
             if (!localDB) await initLocalDB();
-            return new Promise((resolve, reject) => {
-                const tx = localDB.transaction(STORE_NAME, 'readwrite');
-                const store = tx.objectStore(STORE_NAME);
-                const request = store.delete(id);
-                
-                request.onsuccess = () => resolve();
-                request.onerror = () => reject(request.error);
-            });
+            const tx = localDB.transaction(STORE_NAME, 'readwrite');
+            tx.objectStore(STORE_NAME).delete(id);
+
+            if (currentUser) {
+                try {
+                    const docRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'notebooks', id);
+                    await deleteDoc(docRef);
+                } catch (err) {
+                    console.error("Cloud Delete Failed:", err);
+                }
+            }
         }
 
         const pdfjsLib = window['pdfjs-dist/build/pdf'];
@@ -541,7 +698,7 @@
         // VIBRANT FLUORESCENT HIGHLIGHTER PALETTE MAP
         const PALETTES = {
             pen: ['#1C1C1E', '#0A84FF', '#FF375F', '#30D158'], 
-            highlighter: ['#FFE600', '#32D74B', '#FF375F', '#00C7BE']
+            highlighter: ['#FFD60A', '#32ADE6', '#FF375F', '#30D158']
         };
         const SIZES = { 
             pen: [2, 5, 9], 
@@ -644,9 +801,9 @@
             
             await initLocalDB();
             await loadNotebooksFromLocal();
+            await setupFirebaseAuth();
         }
 
-        // Apple Pencil Hover Indicator
         function setupPencilHoverTracking() {
             const hoverRing = document.getElementById('pencil-hover-ring');
             
@@ -799,7 +956,7 @@
             const exportModal = document.getElementById('export-modal');
             const exportContent = document.getElementById('export-modal-content');
             exportModal.classList.add('opacity-0', 'pointer-events-none'); 
-            exportContent.classList.remove('scale-100'); 
+            exportContent.classList.remove('scale-90'); 
             exportContent.classList.add('scale-90');
             setTimeout(() => { exportModal.classList.remove('active'); }, 300);
         }
@@ -1721,7 +1878,6 @@
                         drawPaperTemplate(ctx, p.width, p.height, p.paperType, false);
                     }
                     
-                    // Render highlighters first then other paths for thumbnail
                     p.paths.filter(path => path.tool === 'highlighter').forEach(path => renderPathOnContext(ctx, path, false));
                     p.paths.filter(path => path.tool !== 'highlighter').forEach(path => renderPathOnContext(ctx, path, false));
                 };
@@ -1853,7 +2009,6 @@
             drawingCanvas.width = w; drawingCanvas.height = h; 
             activeCanvas.width = w; activeCanvas.height = h;
 
-            // Enable Hardware-Accelerated Contexts (desynchronized: true)
             const bgCtx = bgCanvas.getContext('2d', { alpha: false, desynchronized: true }); 
             const drawCtx = drawingCanvas.getContext('2d', { willReadFrequently: true, desynchronized: true }); 
             const actCtx = activeCanvas.getContext('2d', { desynchronized: true }); 
@@ -1908,7 +2063,6 @@
                 bgCtx.fillRect(0, 0, page.width, page.height); 
             }
 
-            // Draw Background Template / PDF Image
             if (page.bgImage) {
                 const img = getCachedImage(page.bgImage, () => {
                     if (!isExport && renderedPages.has(index)) redrawPage(index);
@@ -1932,7 +2086,6 @@
             highlighters.forEach(path => renderPathOnContext(drawCtx, path, isExport));
             otherPaths.forEach(path => renderPathOnContext(drawCtx, path, isExport));
 
-            // Image Selection Overlay
             if (!isExport && selectedImage && selectedImage.pageIndex === index) {
                 const p = page.paths[selectedImage.pathIndex];
                 if (p && p.tool === 'image') {
@@ -2016,14 +2169,14 @@
             ctx.lineCap = 'round'; 
             ctx.lineJoin = 'round';
 
-            // OPTIMIZED FLUORESCENT HIGHLIGHTER: Keeps printed text and ink pitch-black
+            // OPTIMIZED FLUORESCENT HIGHLIGHTER: Keeps text crisp
             if (path.tool === 'highlighter') {
                 if (isPaperDark() && !isExport) {
                     ctx.globalCompositeOperation = 'screen'; 
                     ctx.globalAlpha = 0.6;
                 } else {
                     ctx.globalCompositeOperation = 'multiply'; 
-                    ctx.globalAlpha = 0.4;
+                    ctx.globalAlpha = 0.45;
                 }
                 ctx.strokeStyle = renderColor; 
                 ctx.lineWidth = path.width;
@@ -2403,7 +2556,7 @@
             drawPaperTemplate, renderPathOnContext, getCoordinates, snapToShape, bindCanvasEvents,
             exportCurrentPagePNG, exportToPDF, exportNativeBackup, handleImageInsert, handlePdfUpload,
             showToast, showModal, closeModal, showLoading, hideLoading, openExportMenu, closeExportMenu, openPageSettingsModal,
-            closePageSettingsModal, handleFileUpload
+            closePageSettingsModal, handleFileUpload, handleAuthAction
         });
 
         document.addEventListener('DOMContentLoaded', init);
