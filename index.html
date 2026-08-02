@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
-    <!-- Native iPadOS App Meta Tags -->
+    <!-- Native iPadOS 27 App Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="GreatNotes">
@@ -14,33 +14,33 @@
     <link rel="apple-touch-icon" href="data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='512' height='512' fill='%230A84FF' rx='112'/%3E%3Cg transform='translate(256,256) rotate(-6) translate(-256,-256)'%3E%3Crect x='110' y='90' width='292' height='370' rx='20' fill='%23FFF' opacity='0.9'/%3E%3C/g%3E%3Cg transform='translate(256,256) rotate(4) translate(-256,-256)'%3E%3Crect x='110' y='90' width='292' height='370' rx='20' fill='%23FFF'/%3E%3Cpath d='M160 160h200m-200 60h200m-200 60h200m-200 60h200' stroke='%230A84FF' stroke-width='24' stroke-linecap='round' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='512' height='512' fill='%230A84FF' rx='112'/%3E%3Cg transform='translate(256,256) rotate(-6) translate(-256,-256)'%3E%3Crect x='110' y='90' width='292' height='370' rx='20' fill='%23FFF' opacity='0.9'/%3E%3C/g%3E%3Cg transform='translate(256,256) rotate(4) translate(-256,-256)'%3E%3Crect x='110' y='90' width='292' height='370' rx='20' fill='%23FFF'/%3E%3Cpath d='M160 160h200m-200 60h200m-200 60h200m-200 60h200' stroke='%230A84FF' stroke-width='24' stroke-linecap='round' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E">
     
-    <title>GreatNotes - iPad Air Edition</title>
+    <title>GreatNotes - iPadOS 27 Edition</title>
     
-    <!-- Tailwind CSS with iPadOS Glassmorphism Styling -->
+    <!-- Tailwind CSS with Custom Config -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: { sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'] },
+                    fontFamily: { sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Roboto', 'sans-serif'] },
                     colors: {
                         ios: {
                             blue: '#0A84FF', darkBlue: '#0A84FF', bg: '#F2F2F7', darkBg: '#000000', text: '#1C1C1E', darkText: '#FFFFFF', subtext: '#8E8E93', darkSubtext: '#98989D', paperDark: '#1C1C1E'
                         }
                     },
                     boxShadow: {
-                        'liquid': '0 16px 40px rgba(0, 0, 0, 0.08), inset 0 1px 1.5px rgba(255, 255, 255, 0.9), inset 0 -1px 1.5px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255,255,255,0.4)',
-                        'liquid-dark': '0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.15), inset 0 -1px 1px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255,255,255,0.05)',
-                        'page': '0 0 0 1px rgba(0,0,0,0.04), 0 12px 32px -4px rgba(0,0,0,0.1), 0 24px 60px -12px rgba(0,0,0,0.18)',
-                        'page-dark': '0 0 0 1px rgba(255,255,255,0.1), 0 12px 32px -4px rgba(0,0,0,0.6), 0 32px 64px -12px rgba(0,0,0,0.9)'
+                        'liquid': '0 20px 50px rgba(0, 0, 0, 0.08), inset 0 1px 1.5px rgba(255, 255, 255, 0.95), inset 0 -1px 1.5px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255,255,255,0.5)',
+                        'liquid-dark': '0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.2), inset 0 -1px 1px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255,255,255,0.08)',
+                        'page': '0 0 0 1px rgba(0,0,0,0.03), 0 12px 32px -4px rgba(0,0,0,0.1), 0 28px 64px -12px rgba(0,0,0,0.16)',
+                        'page-dark': '0 0 0 1px rgba(255,255,255,0.12), 0 12px 32px -4px rgba(0,0,0,0.6), 0 36px 72px -12px rgba(0,0,0,0.95)'
                     }
                 }
             }
         }
     </script>
     
-    <!-- External Icons & PDF Libraries -->
+    <!-- Pro External Libraries -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -51,6 +51,10 @@
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         
+        /* HARDWARE ACCELERATION CLASS */
+        .gpu-accelerated { transform: translate3d(0, 0, 0); backface-visibility: hidden; perspective: 1000px; will-change: transform, opacity; }
+
+        /* THEME TRANSITIONS */
         .theme-transition { transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; }
         .app-bg-layer { position: fixed; inset: 0; z-index: -1; transition: opacity 0.4s ease; }
         .bg-light-layer { background-color: #F2F2F7; background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px); background-size: 24px 24px; opacity: 1; }
@@ -58,13 +62,15 @@
         .bg-dark-layer { background-color: #000000; background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 24px 24px; opacity: 0; }
         .dark .bg-dark-layer { opacity: 1; }
 
-        .liquid-glass { background: rgba(255, 255, 255, 0.72); backdrop-filter: blur(50px) saturate(300%); -webkit-backdrop-filter: blur(50px) saturate(300%); box-shadow: var(--tw-shadow-liquid); transform: translateZ(0); }
-        .dark .liquid-glass { background: rgba(25, 25, 25, 0.65); box-shadow: var(--tw-shadow-liquid-dark); }
-        .liquid-glass-heavy { background: rgba(245, 245, 247, 0.88); backdrop-filter: blur(60px) saturate(300%); -webkit-backdrop-filter: blur(60px) saturate(300%); transform: translateZ(0); }
+        /* iPadOS 27 LIQUID GLASS DESIGN SYSTEM */
+        .liquid-glass { background: rgba(255, 255, 255, 0.68); backdrop-filter: blur(50px) saturate(280%); -webkit-backdrop-filter: blur(50px) saturate(280%); box-shadow: var(--tw-shadow-liquid); transform: translate3d(0,0,0); }
+        .dark .liquid-glass { background: rgba(25, 25, 25, 0.6); box-shadow: var(--tw-shadow-liquid-dark); }
+        .liquid-glass-heavy { background: rgba(245, 245, 247, 0.88); backdrop-filter: blur(60px) saturate(300%); -webkit-backdrop-filter: blur(60px) saturate(300%); transform: translate3d(0,0,0); }
         .dark .liquid-glass-heavy { background: rgba(28, 28, 30, 0.88); }
 
-        .spring-btn { transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.2s ease, opacity 0.2s ease; transform-origin: center; }
-        .spring-btn:active:not(:disabled) { transform: scale(0.92) translateZ(0); }
+        /* NATIVE SPRING PHYSICS */
+        .spring-btn { transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, opacity 0.2s ease, color 0.2s ease; transform-origin: center; }
+        .spring-btn:active:not(:disabled) { transform: scale(0.92) translate3d(0,0,0); }
         .spatial-transition { transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1), filter 0.5s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1); will-change: transform, filter, opacity; transform-style: preserve-3d; }
         
         .book-cover { transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease; transform-style: preserve-3d; box-shadow: 0 0 0 1px rgba(0,0,0,0.02), 0 8px 24px -4px rgba(0,0,0,0.08), 0 24px 48px -12px rgba(0,0,0,0.15); }
@@ -72,27 +78,26 @@
         .book-spine { position: absolute; left: 0; top: 0; bottom: 0; width: 28px; background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 20%, rgba(0,0,0,0.1) 40%, rgba(255,255,255,0.1) 80%, rgba(0,0,0,0.2) 100%); border-right: 1px solid rgba(0,0,0,0.1); mix-blend-mode: overlay; z-index: 10; pointer-events: none; }
 
         .tool-btn { position: relative; transition: all 0.2s ease; }
-        .tool-btn.active { transform: translateY(-4px) translateZ(0); background-color: #0A84FF !important; color: white !important; box-shadow: 0 6px 16px rgba(10,132,255,0.4); border-radius: 24px; }
+        .tool-btn.active { transform: translateY(-4px) translate3d(0,0,0); background-color: #0A84FF !important; color: white !important; box-shadow: 0 6px 16px rgba(10,132,255,0.4); border-radius: 24px; }
         
-        .overlay { display: none; backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); z-index: 10000; }
+        .overlay { display: none; backdrop-filter: blur(24px) saturate(200%); -webkit-backdrop-filter: blur(24px) saturate(200%); z-index: 10000; }
         .overlay.active { display: flex; }
 
-        #canvas-viewport { scroll-behavior: smooth; touch-action: pan-x pan-y; }
-        .page-wrapper { transform: translateZ(0); will-change: width, height; transition: background-color 0.4s ease; }
-        
-        .ink-layer { touch-action: none !important; -webkit-user-drag: none; }
+        #canvas-viewport { scroll-behavior: smooth; touch-action: pan-x pan-y; contain: content; }
+        .page-wrapper { transform: translate3d(0,0,0); will-change: width, height; transition: background-color 0.4s ease; }
+        .ink-layer { touch-action: none !important; -webkit-user-drag: none; contain: strict; }
 
-        /* Apple Pencil Hover Cursor Ring */
+        /* APPLE PENCIL HOVER RING */
         #pencil-hover-ring {
             position: fixed;
             pointer-events: none;
             border-radius: 50%;
-            border: 2px solid rgba(10, 132, 255, 0.8);
-            box-shadow: 0 0 8px rgba(10, 132, 255, 0.4);
+            border: 2px solid rgba(10, 132, 255, 0.9);
+            box-shadow: 0 0 12px rgba(10, 132, 255, 0.6);
             transform: translate(-50%, -50%);
             z-index: 99999;
             display: none;
-            transition: width 0.1s ease, height 0.1s ease, background-color 0.1s ease;
+            transition: width 0.05s linear, height 0.05s linear;
         }
 
         #global-dropzone { display: none; backdrop-filter: blur(30px) saturate(200%); -webkit-backdrop-filter: blur(30px) saturate(200%); z-index: 9999; }
@@ -103,16 +108,12 @@
         @keyframes pulse { 0% { opacity: 0.3; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1.2); } }
     </style>
 </head>
-<body class="overflow-hidden text-ios-text dark:text-ios-darkText antialiased w-full h-full flex font-sans relative theme-transition">
+<body class="overflow-hidden text-ios-text dark:text-ios-darkText antialiased w-full h-full flex font-sans relative theme-transition gpu-accelerated">
 
-    <!-- Apple Pencil Hover Cursor -->
     <div id="pencil-hover-ring"></div>
-
-    <!-- Background Engine -->
     <div class="app-bg-layer bg-light-layer"></div>
     <div class="app-bg-layer bg-dark-layer"></div>
 
-    <!-- Upload Input -->
     <input type="file" id="general-upload" accept="application/pdf,image/*,.gn" class="hidden" onchange="window.handleFileUpload(event)">
 
     <!-- Drag & Drop Overlay -->
@@ -173,20 +174,20 @@
         <div class="liquid-glass rounded-[32px] w-[320px] md:w-[400px] overflow-hidden transform scale-90 transition-transform duration-300 ease-spring" id="export-modal-content">
             <div class="p-6 md:p-8">
                 <h3 class="text-[20px] md:text-[22px] font-extrabold mb-2 tracking-tight text-ios-text dark:text-white theme-transition text-center">Export Notebook</h3>
-                <p class="text-[14px] md:text-[15px] text-ios-subtext dark:text-gray-300 font-medium theme-transition text-center mb-6">Choose export format.</p>
+                <p class="text-[14px] md:text-[15px] text-ios-subtext dark:text-gray-300 font-medium theme-transition text-center mb-6">Choose format.</p>
                 
                 <div class="space-y-3">
                     <button onclick="window.exportToPDF()" class="w-full flex items-center p-4 bg-white/50 dark:bg-white/5 border border-black/5 dark:border-white/5 rounded-2xl hover:bg-black/5 dark:hover:bg-white/10 font-bold text-[15px] spring-btn text-ios-text dark:text-white theme-transition text-left">
                         <div class="bg-red-500/10 p-2 rounded-lg mr-4"><i data-lucide="file-text" class="w-6 h-6 text-red-500"></i></div>
-                        <div><span class="block">PDF Document</span><span class="block text-[12px] text-ios-subtext font-normal mt-0.5">High quality multi-page PDF.</span></div>
+                        <div><span class="block">PDF Document</span><span class="block text-[12px] text-ios-subtext font-normal mt-0.5">Vector ink & background export.</span></div>
                     </button>
                     <button onclick="window.exportCurrentPagePNG()" class="w-full flex items-center p-4 bg-white/50 dark:bg-white/5 border border-black/5 dark:border-white/5 rounded-2xl hover:bg-black/5 dark:hover:bg-white/10 font-bold text-[15px] spring-btn text-ios-text dark:text-white theme-transition text-left">
                         <div class="bg-blue-500/10 p-2 rounded-lg mr-4"><i data-lucide="image" class="w-6 h-6 text-ios-blue"></i></div>
-                        <div><span class="block">Image (PNG)</span><span class="block text-[12px] text-ios-subtext font-normal mt-0.5">Active page raster render.</span></div>
+                        <div><span class="block">Image (PNG)</span><span class="block text-[12px] text-ios-subtext font-normal mt-0.5">Active page snapshot.</span></div>
                     </button>
                     <button onclick="window.exportNativeBackup()" class="w-full flex items-center p-4 bg-ios-blue/10 dark:bg-ios-blue/20 border border-ios-blue/20 rounded-2xl hover:bg-ios-blue/20 font-bold text-[15px] spring-btn text-ios-blue theme-transition text-left">
                         <div class="bg-ios-blue/20 p-2 rounded-lg mr-4"><i data-lucide="database" class="w-6 h-6 text-ios-blue"></i></div>
-                        <div><span class="block">GreatNotes Backup (.gn)</span><span class="block text-[12px] text-ios-subtext font-normal mt-0.5">Preserves editable vector ink.</span></div>
+                        <div><span class="block">GreatNotes Backup (.gn)</span><span class="block text-[12px] text-ios-subtext font-normal mt-0.5">Fully editable backup.</span></div>
                     </button>
                 </div>
             </div>
@@ -229,7 +230,6 @@
         <span id="toast-text" class="text-[14px] md:text-[16px] font-extrabold tracking-tight text-ios-text dark:text-white theme-transition">Action</span>
     </div>
 
-    <!-- MAIN APP STRUCTURE -->
     <div id="app" class="flex h-screen w-full relative overflow-hidden bg-transparent">
         
         <!-- ==================== LIBRARY VIEW ==================== -->
@@ -275,7 +275,6 @@
                 </div>
 
                 <div id="notebook-grid" class="flex-1 p-6 md:p-12 pt-28 md:pt-40 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-10 md:gap-x-12 md:gap-y-16 overflow-y-auto pb-32">
-                    <!-- Dynamic Notebook Cards Populated Here -->
                 </div>
             </div>
         </div>
@@ -283,7 +282,6 @@
         <!-- ==================== DOCUMENT VIEW ==================== -->
         <div id="document-view" class="flex flex-col h-full w-full bg-ios-canvas dark:bg-ios-darkCanvas theme-transition absolute inset-0 z-50 translate-y-full spatial-transition transform-gpu shadow-2xl rounded-t-[24px] sm:rounded-t-[40px] overflow-hidden">
             
-            <!-- Top Header Navbar -->
             <div class="absolute top-[calc(env(safe-area-inset-top,16px))] left-2 right-2 md:left-6 md:right-6 z-[10005] flex justify-between items-center pointer-events-none gap-2">
                 <div class="liquid-glass spring-btn rounded-full p-1.5 md:p-2 flex items-center pointer-events-auto flex-shrink-0 theme-transition">
                     <button onclick="window.setView('library')" class="flex items-center text-ios-blue font-bold px-3 py-1.5 md:px-4 md:py-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-full tracking-wide text-[14px] md:text-[16px] theme-transition">
@@ -369,7 +367,6 @@
                     
                     <div class="w-px h-6 md:h-8 bg-black/10 dark:bg-white/20 tool-config-area flex-shrink-0 theme-transition"></div>
 
-                    <!-- Color Swatches Palette -->
                     <div id="color-palette" class="snap-center flex items-center space-x-1.5 md:space-x-2.5 tool-config-area flex-shrink-0"></div>
                     
                     <div class="snap-center relative w-7 h-7 md:w-[32px] md:h-[32px] flex-shrink-0 tool-config-area md:ml-1 rounded-full overflow-hidden shadow-md ring-1 ring-black/10 dark:ring-white/20 hover:scale-110 transition-transform cursor-pointer">
@@ -379,7 +376,6 @@
                         </div>
                     </div>
 
-                    <!-- Tip Thickness Palette -->
                     <div id="size-palette" class="snap-center flex items-center space-x-1.5 md:space-x-2 bg-black/5 dark:bg-white/10 p-1 md:p-1.5 rounded-[24px] md:rounded-full tool-config-area flex-shrink-0 theme-transition ml-1 md:ml-3"></div>
 
                     <div class="w-px h-6 md:h-8 bg-black/10 dark:bg-white/20 tool-config-area flex-shrink-0 theme-transition"></div>
@@ -392,7 +388,6 @@
                 </div>
             </div>
 
-            <!-- Workspace Container -->
             <div class="flex flex-1 overflow-hidden relative rounded-t-[24px] sm:rounded-t-[40px] theme-transition z-10"> 
                 
                 <!-- Left Sidebar High-DPI Page Preview Panels -->
@@ -402,9 +397,7 @@
                         <button onclick="window.toggleSidebar()" class="p-2 bg-black/5 dark:bg-white/10 rounded-full text-ios-text dark:text-white hover:bg-black/10 spring-btn theme-transition"><i data-lucide="x" class="w-4 h-4 stroke-[3]"></i></button>
                     </div>
                     
-                    <!-- HIGH RESOLUTION LIVE THUMBNAILS CONTAINER -->
                     <div id="sidebar-thumbnails" class="flex-1 overflow-y-auto p-6 md:p-8 space-y-8 md:space-y-10 scrollbar-hide">
-                        <!-- Real-time Canvas Thumbnails Generated Here -->
                     </div>
                 </div>
 
@@ -413,10 +406,9 @@
                     Page 1 of 1
                 </div>
 
-                <!-- Main Scrollable Canvas Viewport -->
+                <!-- Main Viewport -->
                 <div id="canvas-viewport" class="flex-1 overflow-y-auto overflow-x-auto relative flex justify-center w-full pt-[90px] md:pt-[110px]">
                     <div id="zoom-wrapper" class="flex flex-col items-center py-6 space-y-10 md:space-y-16 min-w-full pb-64"> 
-                        <!-- Canvas Pages Placed Here -->
                     </div>
                 </div>
 
@@ -424,13 +416,30 @@
         </div>
     </div>
 
-    <!-- MAIN JAVASCRIPT ENGINE -->
     <script>
-        // IndexedDB Local Storage Manager
         const DB_NAME = 'GreatNotesiPadDB';
         const DB_VERSION = 1;
         const STORE_NAME = 'notebooks';
         let localDB = null;
+
+        // Global Image Cache Engine
+        const imageCache = new Map();
+
+        function getCachedImage(src, onLoadedCallback) {
+            if (!src) return null;
+            if (imageCache.has(src)) {
+                const cached = imageCache.get(src);
+                if (cached.complete) return cached;
+            }
+            const img = new Image();
+            img.src = src;
+            img.onload = () => {
+                imageCache.set(src, img);
+                if (onLoadedCallback) onLoadedCallback(img);
+            };
+            imageCache.set(src, img);
+            return img;
+        }
 
         function initLocalDB() {
             return new Promise((resolve, reject) => {
@@ -525,15 +534,14 @@
             });
         }
 
-        // External Libraries
         const pdfjsLib = window['pdfjs-dist/build/pdf'];
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
         const { jsPDF } = window.jspdf;
 
-        // Constants & Config
+        // VIBRANT FLUORESCENT HIGHLIGHTER PALETTE MAP
         const PALETTES = {
             pen: ['#1C1C1E', '#0A84FF', '#FF375F', '#30D158'], 
-            highlighter: ['#FFD60A', '#32ADE6', '#FF375F', '#30D158']
+            highlighter: ['#FFE600', '#32D74B', '#FF375F', '#00C7BE']
         };
         const SIZES = { 
             pen: [2, 5, 9], 
@@ -568,18 +576,15 @@
         let activeSize = SIZES.pen[1];
         let customPageTheme = null; 
 
-        // Image Editing State
-        let selectedImage = null; // { pageIndex, pathIndex }
-        let imageAction = null; // 'drag' | 'resize'
+        let selectedImage = null; 
+        let imageAction = null; 
         let actionState = null; 
 
-        // Memory & Virtualization
         const pdfDocumentCache = new Map();
         let renderedPages = new Set();
         let canvasObserver = null;
         let scrollThumbTimeout = null;
 
-        // Drawing Engine State
         let isDrawing = false;
         let currentActiveCanvas = null; 
         let currentDrawingCanvas = null; 
@@ -598,7 +603,6 @@
         let toastTimeout;
         let indicatorTimeout;
 
-        // Core App Boot
         async function init() {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 isDarkMode = true;
@@ -642,7 +646,7 @@
             await loadNotebooksFromLocal();
         }
 
-        // Apple Pencil Hover Tip Preview Indicator
+        // Apple Pencil Hover Indicator
         function setupPencilHoverTracking() {
             const hoverRing = document.getElementById('pencil-hover-ring');
             
@@ -665,7 +669,6 @@
             });
         }
 
-        // Notification & UI Feedback Helpers
         function setSyncing(isSyncing) {
             const syncEl = document.getElementById('sync-status');
             if(!syncEl) return;
@@ -821,7 +824,6 @@
             setTimeout(() => { modal.classList.remove('active'); }, 300);
         }
 
-        // Import & Drag Drop Tracking
         function setupGlobalDragAndDrop() {
             const dropzone = document.getElementById('global-dropzone');
             let dragCounter = 0;
@@ -943,7 +945,7 @@
 
         async function handlePdfUpload(file) {
             if (!file || file.type !== "application/pdf") return;
-            showLoading("Importing PDF", "Mapping vector layers...");
+            showLoading("Importing PDF", "Mapping vector layers & preserving aspect ratio...");
             
             try {
                 const arrayBuffer = await file.arrayBuffer();
@@ -955,29 +957,32 @@
                 
                 for (let i = 1; i <= totalPages; i++) {
                     const subEl = document.getElementById('loading-subtext');
-                    if(subEl) subEl.innerText = `Registering Page ${i} of ${totalPages}`;
-                    if (i % 5 === 0) await new Promise(resolve => requestAnimationFrame(resolve));
+                    if(subEl) subEl.innerText = `Rendering Page ${i} of ${totalPages}...`;
+                    if (i % 3 === 0) await new Promise(resolve => requestAnimationFrame(resolve));
                     
-                    const page = await pdf.getPage(i);
-                    const rawViewport = page.getViewport({ scale: 1.0 });
-                    const scaleFactor = PAGE_WIDTH / rawViewport.width;
-                    const viewport = page.getViewport({ scale: scaleFactor });
+                    const pdfPage = await pdf.getPage(i);
+                    const rawViewport = pdfPage.getViewport({ scale: 1.0 });
                     
-                    const thumbScale = 120 / rawViewport.width;
-                    const thumbViewport = page.getViewport({ scale: thumbScale });
-                    const thumbCanvas = document.createElement('canvas');
-                    thumbCanvas.width = thumbViewport.width;
-                    thumbCanvas.height = thumbViewport.height;
-                    const thumbCtx = thumbCanvas.getContext('2d');
-                    await page.render({ canvasContext: thumbCtx, viewport: thumbViewport }).promise;
-                    const thumbData = thumbCanvas.toDataURL('image/jpeg', 0.4);
+                    const aspectRatio = rawViewport.height / rawViewport.width;
+                    const targetWidth = PAGE_WIDTH;
+                    const targetHeight = Math.round(targetWidth * aspectRatio);
+                    
+                    const renderViewport = pdfPage.getViewport({ scale: (targetWidth * 2) / rawViewport.width });
+                    const pdfCanvas = document.createElement('canvas');
+                    pdfCanvas.width = targetWidth * 2;
+                    pdfCanvas.height = targetHeight * 2;
+                    const pdfCtx = pdfCanvas.getContext('2d');
+                    await pdfPage.render({ canvasContext: pdfCtx, viewport: renderViewport }).promise;
+                    
+                    const bgImageData = pdfCanvas.toDataURL('image/jpeg', 0.85);
 
                     newPages.push({
                         id: `page_${Date.now()}_${i}`,
                         paths: [], redoPaths: [], paperType: 'pdf',
                         pdfPageIndex: i, 
-                        thumbData: thumbData,
-                        width: viewport.width, height: viewport.height 
+                        bgImage: bgImageData,
+                        width: targetWidth, 
+                        height: targetHeight
                     });
                 }
                 
@@ -1116,7 +1121,6 @@
             renderSidebarThumbnails();
         }
 
-        // View Navigation Handlers
         function setView(newView) {
             selectedImage = null; 
             view = newView;
@@ -1183,7 +1187,6 @@
             lucide.createIcons();
         }
 
-        // Library Logic
         function setLibraryFilter(filter) {
             libraryFilter = filter;
             ['all', 'favorites', 'trash'].forEach(f => {
@@ -1271,7 +1274,6 @@
             lucide.createIcons();
         }
 
-        // Notebook Actions
         function toggleFavorite(id) { 
             const nb = notebooks.find(n => n.id === id); 
             if(nb) { nb.isFavorite = !nb.isFavorite; saveNotebook(nb); renderLibrary(); }
@@ -1449,7 +1451,6 @@
             showToast("Template Changed", "file-edit");
         }
 
-        // Undo & Redo System
         function updateUndoRedoUI() {
             const nb = notebooks.find(n => n.id === activeTabId); 
             if (!nb) return; 
@@ -1508,7 +1509,6 @@
             } 
         }
 
-        // Tool Mode & Zoom Handlers
         function toggleStylusMode() {
             stylusOnlyMode = !stylusOnlyMode;
             updateStylusModeUI();
@@ -1661,7 +1661,6 @@
             lucide.createIcons(); 
         }
 
-        // Renders crisp High-DPI Sidebar Thumbnails showing real-time drawings
         function renderSidebarThumbnails() {
             const container = document.getElementById('sidebar-thumbnails'); 
             if (!container) return;
@@ -1686,27 +1685,53 @@
                 if(idx < nb.pages.length - 1) reorderUI.innerHTML += `<button onclick="event.stopPropagation(); window.movePageDown(${idx})" class="bg-white dark:bg-[#2C2C2E] shadow-lg p-1.5 rounded-full text-ios-text dark:text-white hover:scale-110 transition-all mt-1"><i data-lucide="chevron-down" class="w-3.5 h-3.5 stroke-[3]"></i></button>`;
                 
                 const thumbCard = document.createElement('div'); 
-                thumbCard.className = 'w-full aspect-[1/1.3] rounded-xl shadow-md overflow-hidden border-2 transition-all relative cursor-pointer border-transparent group-hover:border-ios-blue/50';
+                thumbCard.className = 'w-full rounded-xl shadow-md overflow-hidden border-2 transition-all relative cursor-pointer thumb-border border-transparent group-hover:border-ios-blue/50';
+                
+                thumbCard.style.aspectRatio = `${p.width} / ${p.height}`;
+                
                 thumbCard.onclick = () => { 
                     const wrapper = document.getElementById(`page-wrapper-${idx}`); 
                     if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'center' }); 
                 };
 
-                // Generate Canvas Preview
                 const thumbCanvas = document.createElement('canvas');
-                thumbCanvas.className = 'w-full h-full object-cover';
-                const scale = 0.3; 
-                thumbCanvas.width = p.width * scale;
-                thumbCanvas.height = p.height * scale;
-                const ctx = thumbCanvas.getContext('2d');
-                ctx.scale(scale, scale);
-
-                redrawPage(idx, true, ctx);
+                thumbCanvas.className = 'w-full h-full object-contain block';
                 
+                const thumbW = 220;
+                const thumbH = Math.round(thumbW * (p.height / p.width));
+                thumbCanvas.width = thumbW * 2; 
+                thumbCanvas.height = thumbH * 2;
+                
+                const ctx = thumbCanvas.getContext('2d');
+                ctx.scale((thumbW * 2) / p.width, (thumbH * 2) / p.height);
+
+                const drawThumbnailContent = () => {
+                    ctx.clearRect(0, 0, p.width, p.height);
+                    if (p.bgImage) {
+                        const img = getCachedImage(p.bgImage, () => drawThumbnailContent());
+                        if (img && img.complete) {
+                            ctx.drawImage(img, 0, 0, p.width, p.height);
+                        } else {
+                            ctx.fillStyle = '#FFFFFF';
+                            ctx.fillRect(0, 0, p.width, p.height);
+                        }
+                    } else {
+                        ctx.fillStyle = isPaperDark() ? '#1C1C1E' : '#FFFFFF';
+                        ctx.fillRect(0, 0, p.width, p.height);
+                        drawPaperTemplate(ctx, p.width, p.height, p.paperType, false);
+                    }
+                    
+                    // Render highlighters first then other paths for thumbnail
+                    p.paths.filter(path => path.tool === 'highlighter').forEach(path => renderPathOnContext(ctx, path, false));
+                    p.paths.filter(path => path.tool !== 'highlighter').forEach(path => renderPathOnContext(ctx, path, false));
+                };
+
+                drawThumbnailContent();
+
                 thumbCard.appendChild(thumbCanvas);
                 
                 const pageLabel = document.createElement('span');
-                pageLabel.className = 'text-[13px] font-bold mt-2 text-ios-subtext dark:text-gray-400';
+                pageLabel.className = 'text-[12px] font-bold mt-2 text-ios-subtext dark:text-gray-400 thumb-text';
                 pageLabel.innerText = `Page ${idx + 1}`;
 
                 thumbItem.appendChild(controlUI); 
@@ -1723,8 +1748,8 @@
             const thumbnails = document.getElementById('sidebar-thumbnails')?.children;
             if(!thumbnails) return;
             for (let i = 0; i < thumbnails.length; i++) {
-                const card = thumbnails[i].querySelector('.aspect-\\[1\\/1\\.3\\]');
-                const text = thumbnails[i].querySelector('span'); 
+                const card = thumbnails[i].querySelector('.thumb-border');
+                const text = thumbnails[i].querySelector('.thumb-text'); 
                 if(!card || !text) continue;
 
                 if (i === index) { 
@@ -1737,7 +1762,6 @@
             }
         }
 
-        // Virtualized Canvas Mounting
         function mountCanvasForPage(index, wrapper) {
             const nb = notebooks.find(n => n.id === activeTabId); 
             if (!nb || !nb.pages[index]) return; 
@@ -1829,8 +1853,9 @@
             drawingCanvas.width = w; drawingCanvas.height = h; 
             activeCanvas.width = w; activeCanvas.height = h;
 
-            const bgCtx = bgCanvas.getContext('2d', { alpha: false }); 
-            const drawCtx = drawingCanvas.getContext('2d', { willReadFrequently: true }); 
+            // Enable Hardware-Accelerated Contexts (desynchronized: true)
+            const bgCtx = bgCanvas.getContext('2d', { alpha: false, desynchronized: true }); 
+            const drawCtx = drawingCanvas.getContext('2d', { willReadFrequently: true, desynchronized: true }); 
             const actCtx = activeCanvas.getContext('2d', { desynchronized: true }); 
             
             bgCtx.setTransform(1, 0, 0, 1, 0, 0); bgCtx.scale(dpr, dpr); 
@@ -1838,7 +1863,6 @@
             actCtx.setTransform(1, 0, 0, 1, 0, 0); actCtx.scale(dpr, dpr);
         }
 
-        // Laser Pointer Engine
         function startLaserFadeLoop() {
             if (laserFadeAnimId) return;
             function loop() {
@@ -1860,7 +1884,6 @@
             laserFadeAnimId = requestAnimationFrame(loop);
         }
 
-        // CORE RENDERER & HIGHLIGHTER CRACK FIX
         function redrawPage(index, isExport = false, overrideCtx = null) {
             const nb = notebooks.find(n => n.id === activeTabId); 
             if (!nb) return; 
@@ -1885,39 +1908,31 @@
                 bgCtx.fillRect(0, 0, page.width, page.height); 
             }
 
-            if (page.paperType === 'pdf') {
-                const pdfDoc = pdfDocumentCache.get(nb.id);
-                if (pdfDoc && !isExport) {
-                    pdfDoc.getPage(page.pdfPageIndex).then(pdfPage => {
-                        const dpr = Math.min(window.devicePixelRatio || 2, 2); 
-                        const rawWidth = pdfPage.getViewport({ scale: 1.0 }).width;
-                        const scaleFactor = (page.width / rawWidth) * dpr;
-                        const viewport = pdfPage.getViewport({ scale: scaleFactor });
-                        
-                        bgCtx.save();
-                        bgCtx.setTransform(1, 0, 0, 1, 0, 0); 
-                        bgCtx.fillStyle = isPaperDark() ? '#1C1C1E' : '#FFFFFF';
-                        bgCtx.fillRect(0, 0, page.width * dpr, page.height * dpr);
-                        pdfPage.render({ canvasContext: bgCtx, viewport: viewport });
-                        bgCtx.restore();
-                    });
+            // Draw Background Template / PDF Image
+            if (page.bgImage) {
+                const img = getCachedImage(page.bgImage, () => {
+                    if (!isExport && renderedPages.has(index)) redrawPage(index);
+                });
+                if (img && img.complete) {
+                    bgCtx.imageSmoothingEnabled = true;
+                    bgCtx.imageSmoothingQuality = 'high';
+                    bgCtx.drawImage(img, 0, 0, page.width, page.height);
+                } else {
+                    bgCtx.fillStyle = '#FFFFFF';
+                    bgCtx.fillRect(0, 0, page.width, page.height);
                 }
-            } else if (page.bgImage) {
-                const img = new Image(); 
-                img.onload = () => { bgCtx.drawImage(img, 0, 0, page.width, page.height); }; 
-                img.src = page.bgImage;
             } else { 
                 drawPaperTemplate(bgCtx, page.width, page.height, page.paperType, isExport); 
             }
 
-            // HIGHLIGHTER / INK PASS: Render highlighters first so pen strokes lay on top cleanly!
+            // SEGREGATED LAYER RENDERING: Draw highlighters FIRST behind pen strokes
             const highlighters = page.paths.filter(p => p.tool === 'highlighter');
             const otherPaths = page.paths.filter(p => p.tool !== 'highlighter');
 
             highlighters.forEach(path => renderPathOnContext(drawCtx, path, isExport));
             otherPaths.forEach(path => renderPathOnContext(drawCtx, path, isExport));
 
-            // Image Selection Bounding Box
+            // Image Selection Overlay
             if (!isExport && selectedImage && selectedImage.pageIndex === index) {
                 const p = page.paths[selectedImage.pathIndex];
                 if (p && p.tool === 'image') {
@@ -1930,14 +1945,12 @@
                     
                     const handleRadius = 12 / zoomLevel;
 
-                    // Resize Handle
                     drawCtx.fillStyle = '#FFFFFF';
                     drawCtx.beginPath();
                     drawCtx.arc(p.x + p.w, p.y + p.h, handleRadius, 0, Math.PI*2);
                     drawCtx.fill();
                     drawCtx.stroke();
 
-                    // Delete Handle
                     drawCtx.fillStyle = '#FF3B30';
                     drawCtx.beginPath();
                     drawCtx.arc(p.x, p.y, handleRadius, 0, Math.PI*2);
@@ -1983,15 +1996,11 @@
             }
         }
 
-        // UNIFIED SMOOTH PATH RENDERER (NO CRACKS / NO OVERLAPPING SPECS)
         function renderPathOnContext(ctx, path, isExport = false) {
             if (path.tool === 'image') {
-                const img = new Image(); 
-                img.src = path.src;
-                if (img.complete) {
+                const img = getCachedImage(path.src);
+                if (img && img.complete) {
                     ctx.drawImage(img, path.x, path.y, path.w, path.h);
-                } else {
-                    img.onload = () => ctx.drawImage(img, path.x, path.y, path.w, path.h);
                 }
                 return;
             }
@@ -2007,19 +2016,18 @@
             ctx.lineCap = 'round'; 
             ctx.lineJoin = 'round';
 
-            // FIXED HIGHLIGHTER BLENDING ENGINE
+            // OPTIMIZED FLUORESCENT HIGHLIGHTER: Keeps printed text and ink pitch-black
             if (path.tool === 'highlighter') {
                 if (isPaperDark() && !isExport) {
                     ctx.globalCompositeOperation = 'screen'; 
-                    ctx.globalAlpha = 0.65;
+                    ctx.globalAlpha = 0.6;
                 } else {
                     ctx.globalCompositeOperation = 'multiply'; 
-                    ctx.globalAlpha = 0.45;
+                    ctx.globalAlpha = 0.4;
                 }
                 ctx.strokeStyle = renderColor; 
                 ctx.lineWidth = path.width;
                 
-                // SINGLE UNIFIED VECTOR PATH (Eliminates Segment Micro-Cracks)
                 ctx.beginPath(); 
                 ctx.moveTo(path.points[0].x, path.points[0].y);
                 if (path.points.length > 2) {
@@ -2048,7 +2056,6 @@
                 }
                 ctx.stroke();
             } else {
-                // Pen Vector Path
                 ctx.globalCompositeOperation = 'source-over'; 
                 ctx.globalAlpha = 1.0; 
                 ctx.strokeStyle = renderColor;
@@ -2194,6 +2201,9 @@
                 if (!isDrawing || currentActiveCanvas !== activeCanvas) return;
                 const coords = getCoordinates(e, activeCanvas);
                 
+                const prevPoint = strokePoints[strokePoints.length - 1];
+                if (prevPoint && Math.hypot(coords.x - prevPoint.x, coords.y - prevPoint.y) < 0.5) return;
+
                 if (currentTool === 'pen' && !hasSnapped) {
                     clearTimeout(shapeSnapTimeout);
                     shapeSnapTimeout = setTimeout(() => {
@@ -2214,7 +2224,7 @@
                         drawCtx.globalCompositeOperation = 'destination-out';
                         drawCtx.lineWidth = activeSize;
                         drawCtx.lineCap = 'round';
-                        ctx.lineJoin = 'round';
+                        drawCtx.lineJoin = 'round';
                         drawCtx.beginPath();
                         drawCtx.moveTo(strokePoints[strokePoints.length-2]?.x || coords.x, strokePoints[strokePoints.length-2]?.y || coords.y);
                         drawCtx.lineTo(coords.x, coords.y);
@@ -2271,10 +2281,7 @@
                         nb.pages[activePageIndexForDrawing].redoPaths = []; 
                     }
                     
-                    if (currentTool !== 'eraser') {
-                        const drawCtx = currentDrawingCanvas.getContext('2d');
-                        renderPathOnContext(drawCtx, pathObj);
-                    }
+                    redrawPage(activePageIndexForDrawing);
                     
                     saveNotebook(nb);
                     renderSidebarThumbnails();
@@ -2300,7 +2307,6 @@
             activeCanvas.addEventListener('pointercancel', stopHandler);
         }
 
-        // Export Engine
         function exportCurrentPagePNG() {
             const nb = notebooks.find(n => n.id === activeTabId);
             if (!nb) return;
@@ -2386,7 +2392,6 @@
             }, 500);
         }
 
-        // Global Bindings
         Object.assign(window, {
             toggleTheme, isPaperDark, togglePageTheme, setView, toggleSidebar, toggleFullscreen, toggleFocusMode,
             setLibraryFilter, renderLibrary, toggleFavorite, moveToTrash, restoreNotebook, openNotebook, requestNewNotebook,
@@ -2404,4 +2409,4 @@
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
-</html>
+</html>    
